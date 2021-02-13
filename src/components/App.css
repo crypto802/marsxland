@@ -1,0 +1,13 @@
+/* Styles go here */
+body {
+  background: url('https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia22333.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: #212529;
+}
+
+.spacer5 {
+  height: 50px;
+}
