@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { ProgressBar, Button, Card, Modal, Spinner, Nav} from 'react-bootstrap';
+import { ProgressBar, Button, Card, Modal, Spinner, Nav, Container, Col, Row, Image} from 'react-bootstrap';
 import Web3 from 'web3';
 import MarsLand from '../abis/MarsLand0.json'
 
 
 import Identicon from 'identicon.js';
+import { SocialIcon } from 'react-social-icons';
 
 class Landing extends Component {
  state = { show: false , loading: true, detected: true, alreadyClaimed: false, mintAmount: '1'};
@@ -92,19 +93,19 @@ class Landing extends Component {
            <div className="container-fluid d-flex align-items-center justify-content-center h-100">
                <div className="row d-flex justify-content-center text-center">
                    <div className="col-md-20">
-                       <h3 className="display-4 font-weight-bold text-white pt-5 mb-2">Ethereum token for land ownership in Mars</h3>
+                       <h3 className="display-4 font-weight-bold text-white pt-5 mb-2">Ethereum token for land ownership on Mars</h3>
                        <h3 className="display-4 font-weight-bold text-white pt-5 mb-2">MARSX Tokens</h3>
                        <hr className="hr-light"/>
 
                        <h4 className="text-white mb-2">Tokens are not for sale. Free to claim: First come, first served.</h4>
                        <h4 className="text-white my-4">50% of the mars area is tokenized. 50% is reserved for public use (not tokenized).</h4>
-                       <h4 className="text-white my-4">Each token represents 1 km² of mars area (Max supply: 72399250 tokens).</h4>
+                       <h4 className="text-white my-4">Each token represents 1 km² of mars area (Max supply: 72,399,250 tokens).</h4>
                        <h4 className="text-white my-4">Each individual account address is eligable to claim only once.</h4>
                        <h4 className="text-white my-4">Number of tokens that each account can claim reduces over time.</h4>
-                       <h4 className="text-white my-4">Dev team claimed 2% of the tokens on contract creation (possible only once) to cover DEV costs.</h4>
                        <h4 className="text-white my-4 ">The smart contract has no owner. No admin can mint extra tokens.</h4>
+
                        <Button variant="primary" onClick={() => this.openDialog()}>
-                        Claim Tokens
+                        Claim Free Tokens
                        </Button>
                        <Modal show={this.state.show} onHide={() => this.setShow(false)}>
                         <Modal.Header closeButton>
@@ -124,7 +125,7 @@ class Landing extends Component {
                                     this.state.alreadyClaimed
                                     ?
                                       <div>
-                                        <p className="text-warning">Each account is eligible to claim only once. The following account has already claimed MARSLAND tokens:</p>
+                                        <p className="text-warning">The following account has already claimed MARSLAND tokens. Each account is eligible to claim only once.</p>
                                         <p className="text-warning">{this.state.account} </p>
                                       </div>
                                     :
@@ -153,7 +154,7 @@ class Landing extends Component {
                             </Button>
                           :
                             <Button variant="primary" onClick={() => this.mint()}>
-                              Mint
+                              Claim Tokens
                             </Button>
                         }
 
@@ -165,6 +166,24 @@ class Landing extends Component {
 
                        <h4 className="text-white my-4">Total Minted:</h4>
                       <ProgressBar animated now={2} label={'2%'}/>
+                      <div className="spacer5"></div>
+
+                        <Row>
+                          <Col xs={12}>
+                            <SocialIcon network="github" url="https://github.com/crypto802/marsxland" bgColor="#000000" fgColor="#FFFFFF" />
+                            <a href="https://etherscan.io/token/0x410eca3747e2b2021aaba9c7e4f41b23db89b5e2">
+                            <Image src="https://imgc.androidappsapk.co/P3w5fWflrqxHfCraVbaLUQi587qU3KvlRpumFMFIOANQbj5ROODnq5o67AuEWaGCbPI=s100" width={55} height={55} rounded />
+                            </a>
+                          </Col>
+                        </Row>
+
+
+
+                      <hr className="hr-light"/>
+                      <hr className="hr-light"/>
+                      <hr className="hr-light"/>
+
+
 
                    </div>
 

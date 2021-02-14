@@ -1,8 +1,7 @@
 {
-  "name": "name...",
+  "name": "marsxtoken",
   "version": "0.1.0",
-  "description": "description...",
-  "author": "gregory@dappuniversity.com",
+  "homepage": "https://marsx-24a04.firebaseapp.com",
   "dependencies": {
     "@openzeppelin/contracts": "^3.3.0",
     "@openzeppelin/test-helpers": "^0.5.10",
@@ -45,6 +44,7 @@
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "gh-pages": "^2.2.0",
+    "react-social-icons": "^4.1.0",
     "truffle-hdwallet-provider": "^1.0.17",
     "truffle-plugin-verify": "^0.5.4"
   }
